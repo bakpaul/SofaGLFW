@@ -42,7 +42,7 @@
 namespace windows
 {
 
-    void showComponents(const char* const& windowNameComponents,
+    void  showComponents(const char* const& windowNameComponents,
                         WindowState& winManagerComponents)
     {
         if (*winManagerComponents.getStatePtr())

@@ -349,6 +349,7 @@ void ImGuiGUIEngine::startFrame(sofaglfw::SofaGLFWBaseGUI* baseGUI)
     static constexpr auto windowNamePerformances = ICON_FA_CHART_LINE "  Performances";
     static constexpr auto windowNameProfiler = ICON_FA_HOURGLASS "  Profiler";
     static constexpr auto windowNameSceneGraph = ICON_FA_SITEMAP "  Scene Graph";
+    static constexpr auto windowNameComponentInspector = ICON_FA_GLASS "  Component Inspector";
     static constexpr auto windowNameDisplayFlags = ICON_FA_EYE "  Display Flags"     ;
     static constexpr auto windowNamePlugins = ICON_FA_CIRCLE_PLUS "  Plugins";
     static constexpr auto windowNameComponents = ICON_FA_LIST "  Components";
@@ -741,7 +742,7 @@ void ImGuiGUIEngine::resetView(ImGuiID dockspace_id, const char* windowNameScene
     ImGui::DockBuilderAddNode(dockspace_id, ImGuiDockNodeFlags_PassthruCentralNode | ImGuiDockNodeFlags_NoDockingInCentralNode | ImGuiDockNodeFlags_DockSpace);
     ImGui::DockBuilderSetNodeSize(dockspace_id, viewport->Size);
 
-    auto dock_id_right = ImGui::DockBuilderSplitNode(dockspace_id, ImGuiDir_Right, 0.4f, nullptr, &dockspace_id);
+    auto dock_id_right = ImGui::DockBuilderSplitNode(dockspace_id, ImGuiDir_Left, 0.4f, nullptr, &dockspace_id);
     ImGui::DockBuilderDockWindow(windowNameSceneGraph, dock_id_right);
     auto dock_id_down = ImGui::DockBuilderSplitNode(dockspace_id, ImGuiDir_Down, 0.3f, nullptr, &dockspace_id);
     ImGui::DockBuilderDockWindow(windowNameLog, dock_id_down);
