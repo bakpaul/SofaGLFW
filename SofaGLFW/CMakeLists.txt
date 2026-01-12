@@ -54,6 +54,11 @@ endif()
 
 if(TARGET PkgConfig::FFMPEG)
     message("Enabling the Video Recorder for GLFW.")
+
+    get_target_property(FFMPEG_LINK_LIBRARIES PkgConfig::FFMPEG INTERFACE_LINK_LIBRARIES)
+    message(${FFMPEG_LINK_LIBRARIES})
+
+    sofa_install_libraries(TARGETS PkgConfig::FFMPEG)
 else()
     message("Disabling the Video Recorder for GLFW. PkgConfig and libav libraries are required to enable the Video Recorder.")
 endif()
