@@ -42,7 +42,7 @@ endif()
 
 find_package(PkgConfig QUIET)
 if(PkgConfig_FOUND)
-
+    set(PKG_CONFIG_USE_STATIC_LIBS ON)
     pkg_check_modules(FFMPEG IMPORTED_TARGET
         libavcodec
         libavformat
